@@ -2,6 +2,7 @@
 <html class="no-js" lang="">
 
 <?php include "head.php"; ?>
+<?php include "conexionMySQL.php"; ?>
 
 <body>
     <!--[if lte IE 9]>
