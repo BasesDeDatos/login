@@ -32,6 +32,8 @@ return
 					"enabled" => true,
 					"keys" => array("id" => "1872409429708694", "secret" => "ac1b2e9111a58df41e09b61304cdb391"),
 					"trustForwarded" => false,
+					"scope"   => ['email', 'user_about_me', 'user_birthday'],
+        			"display" => "popup",
 					"wrapper" => array( "path" => "providers/Facebook.php", "class" => "Hybrid_Providers_Facebook" )
 				),
 				"Twitter" => array(
