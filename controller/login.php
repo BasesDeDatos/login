@@ -35,7 +35,7 @@ if (isset($_POST['btn-login'])) {
         $row = mysqli_fetch_array($res);
         $count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
         if ($count == 1 && $row['userPass'] == $password) {
-            $_SESSION['user'] = $row['userId'];
+            $_SESSION['user'] = $row['userName'];
             header("Location: home.php");
         } else {
             $errMSG = "Incorrect Credentials, Try again...";
