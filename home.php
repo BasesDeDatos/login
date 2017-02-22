@@ -18,9 +18,9 @@
             </div>
         </div>
         <div class="row">
-           <div class="col-md-4">
+           <div class="col-md-12">
                <center>
-                   <a href='logout.php' class="btn btn-default">Log Out</button>
+                   <a href='logout.php' class="btn btn-default" style="color: #fff; background-color: rgba(0,0,0,.12)">Log Out</a>
                </center>
             </div>
         </div>            
