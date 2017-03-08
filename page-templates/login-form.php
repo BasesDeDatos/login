@@ -55,6 +55,10 @@
             <span class="fa fa-facebook"></span>
             Sign in with facebook
         </a>
+        <a href="?provider=google" class="btn btn-block btn-social btn-google">
+            <span class="fa fa-google"></span>
+            Sign in with google
+        </a>
 
         <div class="form-group">
             <p class="message">Not registered? <a href="#">Create an account</a>

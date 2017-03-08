@@ -2,7 +2,7 @@
 
 $error = false;
 
-if (isset($_POST['btn-login'])) {
+if (!mysqli_connect_errno() && isset($_POST['btn-login'])) {
 
     $email = trim($_POST['email']);
     $email = strip_tags($email);

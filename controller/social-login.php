@@ -7,17 +7,33 @@ if (isset($_REQUEST["provider"])) {
     require 'vendor/autoload.php';
     $hybridauth = new Hybrid_Auth( 'config.php' );
     
-    try{
-        $Profile = $hybridauth->authenticate( "Facebook" );
-        
-        $user_profile = $Profile->getUserProfile();
-        
-        $_SESSION['user'] = $user_profile->displayName;
-        
-        header("Location: home.php");
+    if($_GET["provider"] == "facebook"){
+        try{
+            $Profile = $hybridauth->authenticate( "Facebook" );
+            
+            $user_profile = $Profile->getUserProfile();
+            
+            $_SESSION['user'] = $user_profile->displayName;
+            
+            header("Location: home.php");
+        }
+        catch( Exception $e ){
+            $error = "Ooophs, we got an error: " . $e->getMessage();
+        }
     }
-    catch( Exception $e ){
-        $error = "Ooophs, we got an error: " . $e->getMessage();
+    else if($_GET["provider"] == "google" || $_GET["provider"] == "google#"){
+        try{
+            $Profile = $hybridauth->authenticate( "google" );
+            
+            $user_profile = $Profile->getUserProfile();
+            
+            $_SESSION['user'] = $user_profile->displayName;
+            
+            header("Location: home.php");
+        }
+        catch( Exception $e ){
+            $error = "Ooophs, we got an error: " . $e->getMessage();
+        }
     }
     
     // if (!$error) {

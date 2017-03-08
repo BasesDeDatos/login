@@ -26,7 +26,9 @@ return
 				),
 				"Google" => array(
 					"enabled" => true,
-					"keys" => array("id" => "", "secret" => ""),
+					"keys" => array("id" => "952090812292-kl7e7niv7i3h3b62e3nbk8jsd9t4rgt2.apps.googleusercontent.com", "secret" => "1AowOgcN2dREr9MwMWAOShNM"),
+					"wrapper" => array( "path" => "providers/Google.php", "class" => "Hybrid_Providers_Google" )
+
 				),
 				"Facebook" => array(
 					"enabled" => true,

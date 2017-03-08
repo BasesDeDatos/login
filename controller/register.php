@@ -2,7 +2,7 @@
 
 $error = false;
 
-if (isset($_POST['btn-signup'])) {
+if (!mysqli_connect_errno() && isset($_POST['btn-signup'])) {
 
     // clean user inputs to prevent sql injections
     $name = trim($_POST['name']);
