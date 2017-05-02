@@ -29,13 +29,13 @@ if (!mysqli_connect_errno() && isset($_POST['btn-login'])) {
     // if there's no error, continue to login
     if (!$error) {
 
-        $password = hash('sha256', $pass); // password hashing using SHA256
+        // $password = hash('sha256', $pass); // password hashing using SHA256
 
-        $res = mysqli_query($mysqli, "SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
+        $res = mysqli_query($mysqli, "SELECT id, username, password FROM usuario WHERE username='$email'");
         $row = mysqli_fetch_array($res);
         $count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
         if ($count == 1 && $row['userPass'] == $password) {
-            $_SESSION['user'] = $row['userName'];
+            $_SESSION['user'] = $row['username'];
             header("Location: home.php");
         } else {
             $errMSG = "Incorrect Credentials, Try again...";

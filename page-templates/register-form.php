@@ -21,13 +21,13 @@
         </div>
         <?php } ?>
 
-        <div class="form-group">
-            <div class="input-group">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                <input type="text" name="name" class="form-control" placeholder="Enter Name" maxlength="50" value="<?php echo $name ?>" />
-            </div>
-            <span class="text-danger"><?php echo $nameError; ?></span>
-        </div>
+        <!--<div class="form-group">-->
+        <!--    <div class="input-group">-->
+        <!--        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>-->
+        <!--        <input type="text" name="name" class="form-control" placeholder="Enter Name" maxlength="50" value="<?php echo $name ?>" />-->
+        <!--    </div>-->
+        <!--    <span class="text-danger"><?php echo $nameError; ?></span>-->
+        <!--</div>-->
 
         <div class="form-group">
             <div class="input-group">
@@ -46,6 +46,14 @@
         </div>
 
         <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                <input type="password" name="repeat-pass" class="form-control" placeholder="Re-enter Password" maxlength="15" />
+            </div>
+            <span class="text-danger"><?php echo $passError; ?></span>
+        </div>
+
+        <div class="form-group">
             <hr />
         </div>
 
@@ -53,17 +61,17 @@
             <button type="submit" class="btn btn-block" name="btn-signup">Sign Up</button>
         </div>
 
-        <div class="form-group">
-            <center>or</center>
-            <hr />
-        </div>
+        <!--<div class="form-group">-->
+        <!--    <center>or</center>-->
+        <!--    <hr />-->
+        <!--</div>-->
         
-        <button class="btn btn-link social" type="submit" name="btn-facebook">
-            <a class="btn btn-block btn-social btn-facebook">
-                <span class="fa fa-facebook"></span>
-                Sign up with facebook
-            </a>
-        </button>
+        <!--<button class="btn btn-link social" type="submit" name="btn-facebook">-->
+        <!--    <a class="btn btn-block btn-social btn-facebook">-->
+        <!--        <span class="fa fa-facebook"></span>-->
+        <!--        Sign up with facebook-->
+        <!--    </a>-->
+        <!--</button>-->
 
         <div class="form-group">
             <p class="message">Already registered? <a href="#">Sign In</a>

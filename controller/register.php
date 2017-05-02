@@ -5,10 +5,6 @@ $error = false;
 if (!mysqli_connect_errno() && isset($_POST['btn-signup'])) {
 
     // clean user inputs to prevent sql injections
-    $name = trim($_POST['name']);
-    $name = strip_tags($name);
-    $name = htmlspecialchars($name);
-
     $email = trim($_POST['email']);
     $email = strip_tags($email);
     $email = htmlspecialchars($email);
@@ -18,16 +14,16 @@ if (!mysqli_connect_errno() && isset($_POST['btn-signup'])) {
     $pass = htmlspecialchars($pass);
 
     // basic name validation
-    if (empty($name)) {
-        $error = true;
-        $nameError = "Please enter your full name.";
-    } else if (strlen($name) < 3) {
-        $error = true;
-        $nameError = "Name must have atleat 3 characters.";
-    } else if (!preg_match("/^[a-zA-Z ]+$/", $name)) {
-        $error = true;
-        $nameError = "Name must contain alphabets and space.";
-    }
+    // if (empty($name)) {
+    //     $error = true;
+    //     $nameError = "Please enter your full name.";
+    // } else if (strlen($name) < 3) {
+    //     $error = true;
+    //     $nameError = "Name must have atleat 3 characters.";
+    // } else if (!preg_match("/^[a-zA-Z ]+$/", $name)) {
+    //     $error = true;
+    //     $nameError = "Name must contain alphabets and space.";
+    // }
 
     //basic email validation
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -35,7 +31,7 @@ if (!mysqli_connect_errno() && isset($_POST['btn-signup'])) {
         $emailError = "Please enter valid email address.";
     } else {
         // check email exist or not
-        $query = "SELECT userEmail FROM users WHERE userEmail='$email'";
+        $query = "SELECT username FROM usuario WHERE username='$email'";
         $result = mysqli_query($mysqli, $query);
         $count = mysqli_num_rows($result);
         if ($count != 0) {
@@ -59,7 +55,7 @@ if (!mysqli_connect_errno() && isset($_POST['btn-signup'])) {
     // if there's no error, continue to signup
     if (!$error) {
 
-        $query = "INSERT INTO users(userName,userEmail,userPass) VALUES('$name','$email','$password')";
+        $query = "INSERT INTO usuario(username,password) VALUES('$email','$pass')";
         $res = mysqli_query($mysqli, $query);
         if ($res) {
             $errTyp = "success";
